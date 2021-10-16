@@ -1,4 +1,6 @@
-import 'package:assignment_11/screens/fabmenu.dart';
+import 'package:assignment_11/screens/Radiobutton.dart';
+import 'package:assignment_11/screens/Reactionbutton.dart';
+import 'package:assignment_11/screens/dropdown.dart';
 import 'package:assignment_11/screens/groupbotton.dart';
 import 'package:assignment_11/screens/tabbar.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class _MyHomeState extends State<MyHome> {
       appBar: AppBar(
         elevation: 2.0,
         title: Text(
-          'Assignment  1',
+          'Assignment  11',
           style: TextStyle(fontSize: 20),
         ),
         centerTitle: true,
@@ -75,7 +77,7 @@ class _MyHomeState extends State<MyHome> {
                   ),
                   TextButton(
                     child: Text(
-                      'Fab Menu',
+                      'drop Menu',
                       style: TextStyle(fontSize: 12),
                     ),
                     onPressed: () {
@@ -83,7 +85,7 @@ class _MyHomeState extends State<MyHome> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Myfabmenu(),
+                          builder: (context) => DropMenu(),
                         ),
                       );
                     },
@@ -106,24 +108,12 @@ class _MyHomeState extends State<MyHome> {
                 ),
                 onPressed: () {
                   // print('Pressed');
-                },
-                style: TextButton.styleFrom(
-                  primary: Colors.white,
-                  backgroundColor: Colors.green,
-                  shape: const BeveledRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextButton(
-                child: Text(
-                  'Menu button',
-                  style: TextStyle(fontSize: 13),
-                ),
-                onPressed: () {
-                  // print('Pressed');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Myradio(),
+                    ),
+                  );
                 },
                 style: TextButton.styleFrom(
                   primary: Colors.white,
@@ -142,6 +132,12 @@ class _MyHomeState extends State<MyHome> {
                 ),
                 onPressed: () {
                   // print('Pressed');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ReactionButton(),
+                    ),
+                  );
                 },
                 style: TextButton.styleFrom(
                   primary: Colors.white,

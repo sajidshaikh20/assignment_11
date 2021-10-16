@@ -9,28 +9,29 @@ class DropMenu extends StatefulWidget {
 }
 
 class _DropMenuState extends State<DropMenu> {
-  var _itemList = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-  var currentSelected = 'Item 1';
+  var _itemList = ['sajid', 'Farhan', 'Naman sir', 'Bhagav sir'];
+  var currentSelected = 'sajid';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.green,
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: Colors.white),
         title: Text(
-          'Custom Dropdown Menu',
-          style: TextStyle(color: Color(0xff171616)),
+          'Dropdown Menu',
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Normal Use of Menu Button',
-              style: TextStyle(fontSize: 15.0),
+              'drop down selection',
+              style: TextStyle(fontSize: 18.0),
             ),
           ),
           Padding(
@@ -38,10 +39,10 @@ class _DropMenuState extends State<DropMenu> {
                 const EdgeInsets.symmetric(horizontal: 35.0, vertical: 10.0),
             child: DropdownButtonFormField<String>(
               decoration: InputDecoration.collapsed(hintText: ''),
-              dropdownColor: Color(0xffd7bfbf),
+              dropdownColor: Colors.white,
               isExpanded: true,
               isDense: true,
-              autofocus: true,
+              // autofocus: true,
               items: _itemList.map(
                 (String dropDownStingItem) {
                   return DropdownMenuItem(
@@ -59,28 +60,28 @@ class _DropMenuState extends State<DropMenu> {
           SizedBox(
             height: 20.0,
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 35.0, vertical: 10.0),
-            child: DropdownButtonFormField<String>(
-              dropdownColor: Color(0xffd7bfbf),
-              isExpanded: true,
-              isDense: true,
-              autofocus: true,
-              items: _itemList.map(
-                (String dropDownStingItem) {
-                  return DropdownMenuItem(
-                    child: Text(dropDownStingItem),
-                    value: dropDownStingItem,
-                  );
-                },
-              ).toList(),
-              onChanged: (newValueSelected) {
-                dropDownItemSelected(newValueSelected!);
-              },
-              value: currentSelected,
-            ),
-          ),
+          // Padding(
+          //   padding:
+          //       const EdgeInsets.symmetric(horizontal: 35.0, vertical: 10.0),
+          //   child: DropdownButtonFormField<String>(
+          //     dropdownColor: Color(0xffd7bfbf),
+          //     isExpanded: true,
+          //     isDense: true,
+          //     autofocus: true,
+          //     items: _itemList.map(
+          //       (String dropDownStingItem) {
+          //         return DropdownMenuItem(
+          //           child: Text(dropDownStingItem),
+          //           value: dropDownStingItem,
+          //         );
+          //       },
+          //     ).toList(),
+          //     onChanged: (newValueSelected) {
+          //       dropDownItemSelected(newValueSelected!);
+          //     },
+          //     value: currentSelected,
+          //   ),
+          // ),
           SizedBox(
             height: 20.0,
           ),
